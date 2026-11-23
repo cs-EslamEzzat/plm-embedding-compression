@@ -1,0 +1,31 @@
+# Datasets (download them, see README)
+*.csv
+!runs/**/*.csv
+
+# Cached embeddings and search checkpoints (large, regenerated)
+cache/
+*.pkl
+
+# Outputs written by main.py in the repository root
+/results/
+/figures/
+
+# Generated paper figures and self-test outputs
+paper/figures/
+runs_smoke/
+runs/*_rerun/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+venv/
+.venv/
+.env
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

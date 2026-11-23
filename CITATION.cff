@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the article below."
+title: "plm-embedding-compression: code and results for 'How Much Compression Can Protein Language Model Embeddings Tolerate? A Scatter Search-Simulated Annealing Study'"
+type: software
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/cs-EslamEzzat/plm-embedding-compression"
+keywords:
+  - protein subcellular localization
+  - protein language models
+  - ESM-2
+  - embedding compression
+  - feature selection
+  - scatter search
+  - simulated annealing
+authors:
+  - family-names: Attia
+    given-names: "Eslam E. M."
+    email: eslam.ezzat@mu.edu.eg
+    affiliation: "Department of Computer Science, Minia University, Minya, Egypt"
+preferred-citation:
+  type: article
+  title: "How Much Compression Can Protein Language Model Embeddings Tolerate? A Scatter Search-Simulated Annealing Study"
+  authors:
+    - family-names: Attia
+      given-names: "Eslam E. M."
+      affiliation: "Department of Computer Science, Minia University, Minya, Egypt"
+  year: 2026
