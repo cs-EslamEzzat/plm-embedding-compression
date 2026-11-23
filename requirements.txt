@@ -1,19 +1,23 @@
-# Python 3.10 or newer (developed with 3.12 and 3.13)
+# Exact versions used for the reported results (Python 3.13, Windows 64-bit).
+# Newer versions are expected to work but were not used for the paper.
 
 # Core pipeline: search, evaluation, statistics, figures
-numpy>=1.24
-pandas>=2.0
-scipy>=1.10
-scikit-learn>=1.3
-joblib>=1.3
-matplotlib>=3.7
-seaborn>=0.12
-tqdm>=4.60
+numpy==2.4.3
+pandas==3.0.1
+scipy==1.17.1
+scikit-learn==1.8.0
+joblib==1.5.3
+threadpoolctl==3.6.0
+matplotlib==3.10.8
+seaborn==0.13.2
 
-# Embedding generation (needed only when embeddings are not cached yet)
-torch>=2.0
+# Embedding generation (needed only when embeddings are not cached yet).
+# The paper used the CUDA 12.4 build of PyTorch:
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
 fair-esm==2.0.0
 
 # Optional
-# transformers>=4.30 and sentencepiece   -> ProtT5 embeddings (--embedder prott5)
+# tqdm                                   -> progress bars
+# transformers and sentencepiece         -> ProtT5 embeddings (--embedder prott5)
 # umap-learn                             -> UMAP projection figure (t-SNE otherwise)
