@@ -3,7 +3,8 @@
 Code and results for the article
 
 > **How Much Compression Can Protein Language Model Embeddings Tolerate? A Scatter Search–Simulated Annealing Study**
-> Eslam E. M. Attia, Department of Computer Science, Minia University, Egypt.
+> Eslam E. M. Attia, Ahmed Omar, Tarek Abd El-Hafeez, Osman Ali Sadek Ibrahim.
+> Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt.
 
 The study measures how many dimensions of a frozen ESM-2 650M protein embedding
 (1,280 dimensions, mean-pooled) multi-label subcellular localization needs. It

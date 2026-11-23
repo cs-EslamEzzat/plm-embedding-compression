@@ -14,15 +14,34 @@ keywords:
   - scatter search
   - simulated annealing
 authors:
-  - family-names: Attia
+  - family-names: "Attia"
     given-names: "Eslam E. M."
     email: eslam.ezzat@mu.edu.eg
-    affiliation: "Department of Computer Science, Minia University, Minya, Egypt"
+    affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
+  - family-names: "Omar"
+    given-names: "Ahmed"
+    affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
+  - family-names: "Abd El-Hafeez"
+    given-names: "Tarek"
+    affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
+  - family-names: "Ibrahim"
+    given-names: "Osman Ali Sadek"
+    affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
 preferred-citation:
   type: article
   title: "How Much Compression Can Protein Language Model Embeddings Tolerate? A Scatter Search-Simulated Annealing Study"
   authors:
-    - family-names: Attia
+    - family-names: "Attia"
       given-names: "Eslam E. M."
-      affiliation: "Department of Computer Science, Minia University, Minya, Egypt"
+      email: eslam.ezzat@mu.edu.eg
+      affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
+    - family-names: "Omar"
+      given-names: "Ahmed"
+      affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
+    - family-names: "Abd El-Hafeez"
+      given-names: "Tarek"
+      affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
+    - family-names: "Ibrahim"
+      given-names: "Osman Ali Sadek"
+      affiliation: "Department of Computer Science, Faculty of Science, Minia University, Minya, Egypt"
   year: 2026
