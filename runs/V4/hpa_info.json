@@ -1,0 +1,42 @@
+{
+ "file": "hpa_testset.csv",
+ "columns": [
+  "sid",
+  "Cell membrane",
+  "Cytoplasm",
+  "Endoplasmic reticulum",
+  "Golgi apparatus",
+  "Lysosome/Vacuole",
+  "Mitochondrion",
+  "Nucleus",
+  "Peroxisome",
+  "Lengths",
+  "fasta"
+ ],
+ "sequence_column": "fasta",
+ "id_column": "sid",
+ "n_rows": 1717,
+ "labels_dropped_too_few_positives": {
+  "Lysosome_Vacuole": 2,
+  "Peroxisome": 7
+ },
+ "n_exact_overlap_removed": 0,
+ "n_without_label_removed": 0,
+ "n_used": 1717,
+ "labels": [
+  "Cytoplasm",
+  "Nucleus",
+  "Cell_membrane",
+  "Mitochondrion",
+  "Endoplasmic_reticulum",
+  "Golgi_apparatus"
+ ],
+ "positives": {
+  "Cytoplasm": 562,
+  "Nucleus": 893,
+  "Cell_membrane": 287,
+  "Mitochondrion": 196,
+  "Endoplasmic_reticulum": 77,
+  "Golgi_apparatus": 86
+ }
+}

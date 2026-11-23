@@ -1,0 +1,203 @@
+========================================================================
+PAPER 1 -- GAP FIXES  (5 folds; C grid [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 1.0]; inner folds 2)
+========================================================================
+
+[FIXED C]  five-fold mean MCC at matched size
+     method  dims_mean  mcc_macro_mean  mcc_macro_std  f1_macro_mean  f1_micro_mean  jaccard_mean
+        pca      188.6          0.5322         0.0158         0.5767         0.6608        0.6100
+       full     1280.0          0.5071         0.0095         0.5607         0.6436        0.5937
+      SS-SA      188.6          0.5018         0.0100         0.5509         0.6384        0.5756
+L1_embedded      188.6          0.4995         0.0101         0.5499         0.6441        0.5832
+mutual_info      188.6          0.4877         0.0107         0.5394         0.6301        0.5682
+     random      188.6          0.4862         0.0087         0.5374         0.6275        0.5645
+   variance      188.6          0.4837         0.0122         0.5347         0.6209        0.5582
+
+[TUNED C]  five-fold mean MCC at matched size
+     method  dims_mean  mcc_macro_mean  mcc_macro_std  f1_macro_mean  f1_micro_mean  jaccard_mean
+       full     1280.0          0.5706         0.0183         0.6178         0.7033        0.6584
+        pca      188.6          0.5429         0.0170         0.5914         0.6749        0.6215
+L1_embedded      188.6          0.5098         0.0109         0.5620         0.6571        0.5954
+      SS-SA      188.6          0.5078         0.0122         0.5584         0.6458        0.5806
+mutual_info      188.6          0.4987         0.0063         0.5514         0.6440        0.5789
+     random      188.6          0.4967         0.0102         0.5500         0.6401        0.5738
+   variance      188.6          0.4961         0.0131         0.5486         0.6362        0.5710
+
+PAIRED TESTS, SS-SA minus each method (Holm within each regime)
+regime          comparison  mean_diff    ci_lo    ci_hi         t       p  p_holm      d_z  wins
+ fixed SS-SA - L1_embedded    0.00229 -0.00731  0.01189   0.66279 0.54371 0.54371  0.29641     3
+ fixed        SS-SA - full   -0.00529 -0.00781 -0.00277  -5.82432 0.00433 0.01298 -2.60471     0
+ fixed SS-SA - mutual_info    0.01408  0.00414  0.02402   3.93425 0.01704 0.03408  1.75945     5
+ fixed         SS-SA - pca   -0.03041 -0.04150 -0.01932  -7.61140 0.00160 0.00960 -3.40392     0
+ fixed      SS-SA - random    0.01560  0.00944  0.02175   7.03929 0.00215 0.01073  3.14807     5
+ fixed    SS-SA - variance    0.01806  0.01042  0.02570   6.55930 0.00279 0.01118  2.93341     5
+ tuned SS-SA - L1_embedded   -0.00208 -0.01322  0.00906  -0.51819 0.63167 0.63167 -0.23174     2
+ tuned        SS-SA - full   -0.06281 -0.07630 -0.04932 -12.92885 0.00021 0.00124 -5.78196     0
+ tuned SS-SA - mutual_info    0.00905 -0.00019  0.01829   2.71995 0.05299 0.13120  1.21640     4
+ tuned         SS-SA - pca   -0.03517 -0.04503 -0.02531  -9.90442 0.00058 0.00292 -4.42939     0
+ tuned      SS-SA - random    0.01102  0.00471  0.01732   4.85173 0.00833 0.03332  2.16976     5
+ tuned    SS-SA - variance    0.01162  0.00053  0.02270   2.90874 0.04373 0.13120  1.30083     4
+
+EFFECT OF RE-TUNING C (tuned minus fixed, same method)
+     method  mean_diff   ci_lo   ci_hi       p  wins
+L1_embedded    0.01036 0.00316 0.01756 0.01619     5
+      SS-SA    0.00599 0.00236 0.00963 0.01022     5
+       full    0.06352 0.05106 0.07597 0.00014     5
+mutual_info    0.01102 0.00334 0.01870 0.01637     5
+        pca    0.01075 0.00689 0.01462 0.00151     5
+     random    0.01057 0.00604 0.01510 0.00293     5
+   variance    0.01244 0.00691 0.01796 0.00334     5
+
+GRID-EDGE CHECK: 6 of 165 tuned configurations chose C at the edge of the grid (0.0001 or 1)
+method          best_C
+curve_random    1.0       4
+curve_variance  1.0       2
+
+CHOSEN C (count over folds and seeds)
+best_C              0.001  0.003  0.010  0.030  0.100  1.000
+row_0                                                       
+L1_embedded@174         0      1      0      0      0      0
+L1_embedded@176         0      0      1      0      0      0
+L1_embedded@187         0      0      1      0      0      0
+L1_embedded@202         1      0      0      0      0      0
+L1_embedded@204         0      1      0      0      0      0
+SS-SA@174               0      0      1      0      0      0
+SS-SA@176               0      0      1      0      0      0
+SS-SA@187               0      1      0      0      0      0
+SS-SA@202               0      1      0      0      0      0
+SS-SA@204               0      1      0      0      0      0
+curve_random@128        0      8      5      2      0      0
+curve_random@25         1      6      4      1      1      2
+curve_random@256        0     14      1      0      0      0
+curve_random@512        0     15      0      0      0      0
+curve_random@64         0      4      4      3      2      2
+curve_random@896        2     13      0      0      0      0
+curve_variance@128      0      0      5      0      0      0
+curve_variance@25       0      0      2      1      0      2
+curve_variance@256      0      1      4      0      0      0
+curve_variance@512      1      4      0      0      0      0
+curve_variance@64       0      0      1      4      0      0
+curve_variance@896      0      5      0      0      0      0
+full@1280               1      4      0      0      0      0
+mutual_info@174         0      0      1      0      0      0
+mutual_info@176         0      0      1      0      0      0
+mutual_info@187         0      0      1      0      0      0
+mutual_info@202         0      1      0      0      0      0
+mutual_info@204         0      1      0      0      0      0
+pca@174                 1      0      0      0      0      0
+pca@176                 1      0      0      0      0      0
+pca@187                 1      0      0      0      0      0
+pca@202                 0      1      0      0      0      0
+pca@204                 1      0      0      0      0      0
+random@174              1      2      0      0      0      0
+random@176              0      1      2      0      0      0
+random@187              1      2      0      0      0      0
+random@202              0      3      0      0      0      0
+random@204              0      1      2      0      0      0
+variance@174            0      1      0      0      0      0
+variance@176            0      0      1      0      0      0
+variance@187            0      1      0      0      0      0
+variance@202            0      0      1      0      0      0
+variance@204            0      0      1      0      0      0
+
+SIZE-PERFORMANCE CURVE (five-fold mean MCC)
+regime          fixed   tuned
+method   dims                
+random   25    0.2899  0.2896
+         64    0.4099  0.4110
+         128   0.4588  0.4640
+         256   0.4957  0.5123
+         512   0.5181  0.5482
+         896   0.5147  0.5627
+variance 25    0.3231  0.3229
+         64    0.4264  0.4281
+         128   0.4648  0.4694
+         256   0.4988  0.5112
+         512   0.5105  0.5470
+         896   0.5133  0.5638
+
+IS THE FULL EMBEDDING A CEILING?  (subset minus full, per regime)
+regime   method  dims  mean_diff    ci_lo    ci_hi       p  wins
+ fixed   random   512    0.01105  0.00195  0.02016 0.02802     5
+ fixed   random   896    0.00766  0.00516  0.01016 0.00105     5
+ fixed variance   512    0.00347 -0.01035  0.01730 0.52378     2
+ fixed variance   896    0.00626 -0.00069  0.01322 0.06663     4
+ tuned   random   512   -0.02237 -0.02852 -0.01623 0.00054     0
+ tuned   random   896   -0.00788 -0.01072 -0.00503 0.00153     0
+ tuned variance   512   -0.02360 -0.02638 -0.02082 0.00002     0
+ tuned variance   896   -0.00681 -0.01285 -0.00076 0.03534     1
+
+L1 EMBEDDED SELECTION PER FOLD
+ fold   k        C  union
+    0 202 0.000931    220
+    1 204 0.000931    224
+    2 174 0.000750    183
+    3 176 0.000750    183
+    4 187 0.000835    198
+overlap SS-SA vs L1 subsets:
+ fold  ssa  l1  shared
+    0  202 202      50
+    1  204 204      38
+    2  174 174      24
+    3  176 176      30
+    4  187 187      40
+
+========================================================================
+EXTERNAL TEST SET (HPA): 1717 proteins, labels ['Cytoplasm', 'Nucleus', 'Cell_membrane', 'Mitochondrion', 'Endoplasmic_reticulum', 'Golgi_apparatus']
+positives: {'Cytoplasm': 562, 'Nucleus': 893, 'Cell_membrane': 287, 'Mitochondrion': 196, 'Endoplasmic_reticulum': 77, 'Golgi_apparatus': 86}
+
+[FIXED C]  HPA, mean over the five fold models
+     method  dims_mean  mcc_macro_mean  mcc_macro_std  f1_macro_mean  f1_micro_mean  jaccard_mean
+        pca      188.6          0.2985         0.0039         0.4233         0.5475        0.4676
+L1_embedded      188.6          0.2794         0.0051         0.4152         0.5479        0.4606
+       full     1280.0          0.2787         0.0060         0.4153         0.5311        0.4553
+mutual_info      188.6          0.2742         0.0110         0.4126         0.5420        0.4538
+      SS-SA      188.6          0.2729         0.0127         0.4066         0.5404        0.4543
+     random      188.6          0.2713         0.0063         0.4082         0.5336        0.4444
+   variance      188.6          0.2691         0.0080         0.4049         0.5300        0.4449
+
+[TUNED C]  HPA, mean over the five fold models
+     method  dims_mean  mcc_macro_mean  mcc_macro_std  f1_macro_mean  f1_micro_mean  jaccard_mean
+       full     1280.0          0.3081         0.0064         0.4285         0.5573        0.4772
+        pca      188.6          0.3062         0.0051         0.4257         0.5489        0.4664
+L1_embedded      188.6          0.2791         0.0044         0.4139         0.5502        0.4593
+   variance      188.6          0.2765         0.0022         0.4132         0.5407        0.4504
+      SS-SA      188.6          0.2756         0.0198         0.4078         0.5417        0.4532
+     random      188.6          0.2746         0.0070         0.4079         0.5327        0.4401
+mutual_info      188.6          0.2726         0.0056         0.4080         0.5416        0.4486
+
+HPA PAIRED TESTS (paired by fold model), SS-SA minus each method
+regime          comparison  mean_diff    ci_lo    ci_hi       p  p_holm  wins
+ fixed SS-SA - L1_embedded   -0.00647 -0.02507  0.01212 0.38853 1.00000     2
+ fixed        SS-SA - full   -0.00581 -0.02599  0.01437 0.46886 1.00000     2
+ fixed SS-SA - mutual_info   -0.00129 -0.02509  0.02251 0.88734 1.00000     3
+ fixed         SS-SA - pca   -0.02555 -0.03817 -0.01293 0.00492 0.02955     0
+ fixed      SS-SA - random    0.00167 -0.01090  0.01424 0.73058 1.00000     3
+ fixed    SS-SA - variance    0.00381 -0.01296  0.02058 0.56253 1.00000     2
+ tuned SS-SA - L1_embedded   -0.00347 -0.03204  0.02511 0.75310 1.00000     3
+ tuned        SS-SA - full   -0.03248 -0.05538 -0.00958 0.01699 0.10195     0
+ tuned SS-SA - mutual_info    0.00303 -0.01933  0.02538 0.72590 1.00000     3
+ tuned         SS-SA - pca   -0.03064 -0.05329 -0.00800 0.01983 0.10195     0
+ tuned      SS-SA - random    0.00099 -0.02620  0.02819 0.92411 1.00000     3
+ tuned    SS-SA - variance   -0.00091 -0.02483  0.02301 0.92086 1.00000     3
+
+HPA per-compartment MCC (tuned C):
+method                 L1_embedded  SS-SA   full  mutual_info    pca  random  variance
+label                                                                                 
+Cell_membrane                0.320  0.333  0.353        0.303  0.357   0.328     0.312
+Cytoplasm                    0.244  0.221  0.254        0.217  0.247   0.204     0.255
+Endoplasmic_reticulum        0.147  0.095  0.149        0.138  0.153   0.106     0.063
+Golgi_apparatus              0.116  0.163  0.170        0.135  0.182   0.158     0.220
+Mitochondrion                0.483  0.458  0.498        0.464  0.480   0.469     0.434
+Nucleus                      0.365  0.384  0.425        0.379  0.419   0.383     0.376
+
+CONSENSUS SUBSET (dims in >= 3 folds), trained on all partitions, tested on HPA
+                                mean     std
+regime method           dims                
+fixed  consensus_core   45    0.1790     NaN
+       full             1280  0.2932     NaN
+       random_same_size 45    0.1955  0.0222
+tuned  consensus_core   45    0.1801     NaN
+       full             1280  0.3176     NaN
+       random_same_size 45    0.1946  0.0246
+
+REPRODUCIBILITY vs V2 (fixed C): max |diff| = 0.0012
