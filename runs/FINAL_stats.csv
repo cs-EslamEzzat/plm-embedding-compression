@@ -1,0 +1,5 @@
+comparison,mean_diff,t,p,wins,n_folds
+SS-SA vs full,-0.0053,-4.242,0.01324379923898733,0,5
+SS-SA vs mutual_info,0.0141,3.934,0.017042000809348812,5,5
+SS-SA vs pca,-0.0306,-7.966,0.001345413167911813,0,5
+SS-SA vs variance,0.0159,3.752,0.01990480328894284,5,5

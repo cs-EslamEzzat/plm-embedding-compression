@@ -1,0 +1,11 @@
+{
+  "embedder": "esm2",
+  "D": 1280,
+  "selected_dims": 202,
+  "compression_ratio": 0.1578,
+  "best_fitness": 0.4312,
+  "test_partition": 0,
+  "evaluations": 60,
+  "sssa_test_mcc": 0.4873,
+  "full_test_mcc": 0.4936
+}
